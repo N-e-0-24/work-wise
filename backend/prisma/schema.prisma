@@ -1,0 +1,34 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URI")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String   // Hashed password for login
+  name      String
+  bookings  Booking[]
+}
+
+model Seat {
+  id         String   @id @default(uuid())
+  seatNumber Int      // Unique seat number (1 to 80)
+  rowNumber  Int      // Row number (1 to 12)
+  isBooked   Boolean  @default(false)
+  bookingId  String?  // Foreign key for Booking
+  booking    Booking? @relation("BookingToSeats", fields: [bookingId], references: [id]) // Opposite relation to Booking
+}
+
+model Booking {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [userId], references: [id])
+  userId     String
+  seats      Seat[]   @relation("BookingToSeats") // List of booked seats
+  status     String   @default("ACTIVE") // ACTIVE or CANCELLED
+  createdAt  DateTime @default(now())
+}
