@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import apiFetch from "../../fetchRequestBuilder/apifetch";
 import Cookies from "js-cookie";
 import { motion } from "framer-motion";
-import "./styles.css";
+
 
 const SignUp = () => {
   const [name, setName] = useState("");
