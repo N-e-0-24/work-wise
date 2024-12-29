@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["https://work-wise-k9hq.vercel.app"],
+    origin: "https://work-wise-k9hq.vercel.app",
     
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
