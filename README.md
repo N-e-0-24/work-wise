@@ -31,3 +31,13 @@ Before you begin, ensure you have the following installed:
    ```bash
    git clone https://github.com/your-username/ticket-booking-app.git
    cd ticket-booking-app
+
+   npm install
+
+   npx prisma generate
+   npx prisma migrate dev
+
+
+   npm run dev
+
+   node index.js
