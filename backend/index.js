@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000","http://localhost:5173","https://work-wise-k9hq.vercel.app/"],
+    origin: ["http://localhost:3000","http://localhost:5173","https://work-wise-k9hq.vercel.app"],
     
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
