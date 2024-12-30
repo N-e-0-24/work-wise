@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-const BASE_URL = 'https://work-wise-seven.vercel.app/api/';
+const BASE_URL = 'http://localhost:3004/api/';
 
 const apiFetch = async (endpoint, options = {}) => {
   const token = Cookies.get("jwtToken");
